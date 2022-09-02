@@ -3,7 +3,7 @@ Scripts for replicating results shown in our TASLP 2022 paper 'Fusion of modulat
 
 ## Repository structure
 -- Repo <br />
-  -- feature: stores extracted modulation features and LP features <br />
+  &ensp -- feature: stores extracted modulation features and LP features <br />
   -- script <br />
     -- ```LPmain.py```: Extract LP features from DICOVA2 dataset <br />
     -- ```Cambridge_LPmain.py```: Extract LP features from Cambridge dataset (track2) <br />
