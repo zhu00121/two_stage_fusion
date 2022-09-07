@@ -407,6 +407,6 @@ def save_data(data_path,data_name,data):
         pkl.dump(data, handle, protocol=pkl.HIGHEST_PROTOCOL)
     
     print("--------")
-    print('LP feature saved in '+data_path)
+    print('Feature saved in '+data_path)
     
     return 0

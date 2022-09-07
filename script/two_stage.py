@@ -41,8 +41,8 @@ def train_model(X_train,y_train,
     
     elif model == 'rf':
         m = RandomForestClassifier()
-        params = {'n_estimators': [5, 10, 15, 20],
-                 'max_depth': [2, 5, 7, 9]}
+        params = {'n_estimators': [5,10,30,50,100,200],
+                 'max_depth': [2, 5, 10, 20]}
     
     if clf_kwargs['pds'] == 'no':
         """ N-fold stratefied cross-validation """
@@ -146,14 +146,15 @@ def two_stage_main(data:dict,clf_kwargs):
     return preds_final
 
 
-def sys_evaluate(preds,label):
+def sys_evaluate(preds,probs,label):
     
     UAR = sklearn.metrics.recall_score(label, preds, average='macro')
+    ROC = sklearn.metrics.roc_auc_score(label, probs)
     
     # plt.figure(dpi=400)
     # cf = get_confmat(label,preds)
     
-    report = {'UAR':UAR}
+    report = {'UAR':UAR, 'ROC':ROC}
     
     return report
     

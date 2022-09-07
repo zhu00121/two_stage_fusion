@@ -10,7 +10,7 @@ import LPfunc
 import argparse, configparser
 
 
-def lp_main(file_info, **kwargs):
+def lp_main(file_info, lp_param:dict):
     
     print('---Start Processing---')
     print(file_info.case)
@@ -39,7 +39,7 @@ def lp_main(file_info, **kwargs):
         lp_group = LPfunc.extract_lp_in_group(file_info.ad_clean_path,
                                               file_info.audio_type_clean,
                                               file_info.sr, 
-                                              **kwargs['DEFAULT'])
+                                              **lp_param['DEFAULT'])
         print('LP feature extracted.')
         
         """ save LP features """
@@ -57,7 +57,7 @@ if __name__ == "__main__":
     parser.add_argument('--config', type=str, const='./LP_param.ini', nargs='?', help='path to lp configuration file')
     parser.add_argument('--case', type=int, const=0, nargs='?', help='--0:remove silence; --1:feature extraction; --2:both')
     parser.add_argument('--audio_type_og', type=str, const='flac', nargs='?', help='Audio type: .wav/.flac/etc.')
-    parser.add_argument('--audio_type_clean', type=str, const='flac', nargs='?', help='Audio type: .wav/.flac/etc.')
+    parser.add_argument('--audio_type_clean', type=str, const='wav', nargs='?', help='Audio type: .wav/.flac/etc.')
     parser.add_argument('--sr', type=int, const=16000, nargs='?', help='sampling rate')
     parser.add_argument('--ad_original_path', type=str, required=False, help='original path of audio files')
     parser.add_argument('--ad_clean_path',type=str, required=False, help='path of audio files without silence periods')
@@ -84,4 +84,4 @@ if __name__ == "__main__":
         parser.error('--case:1/2 requires the --ad_clean_path')
 
     """ execute """
-    lp_main(args,**config)
+    lp_main(args,config)
