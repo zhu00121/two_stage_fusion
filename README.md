@@ -11,6 +11,9 @@ We also have another repository which includes a toolbox that automatically extr
 2. **Linear Prediction (LP) features** <br />
 LP analysis has been used for separating excitation source and vocal tract, we further extracted low-level descriptors from LP residuals to characterize abnoarmal phonation pattern.
 
+### System overview
+<img src="https://user-images.githubusercontent.com/48067384/230748724-df1abe7f-e93f-4291-aff1-ed16d7e2175b.jpg" width="600" height="200">
+
 ### Repository structure
 - feature: stores extracted modulation features and LP features <br />
 - script <br />
