@@ -41,3 +41,6 @@ If you find our feature sets or the system useful, you may use the following for
   pages={1-14},
   doi={10.1109/TASLP.2023.3265603}}
   ```
+
+### Author
+If you have any questions about the paper/code/data, please do not hesitate to reach me at <Yi.Zhu@inrs.ca>.
